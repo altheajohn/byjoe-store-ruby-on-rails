@@ -13,6 +13,8 @@ import FAQ from "./FAQ.js";
 import JewelryLibrary from "./JewelryLibrary.js";
 import CurrentInventory from "./CurrentInventory";
 import AdminLanding from "./Admin/AdminLandingPage";
+import AddInventory from "./Admin/AddInventory";
+
 import "semantic-ui-css/semantic.min.css";
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
 			{/* <MainHeader /> */}
 			<Routes>
 				<Route path='/' element={<Home />}></Route>
+				{/* <Route path='*' element={<NoPage />} /> */}
 				<Route path='/Admin' element={<AdminLogin />}></Route>
 				<Route path='/AdminLanding' element={<AdminLanding />}></Route>
 				<Route path='/orderform' element={<OrderForm />}></Route>
@@ -30,6 +33,7 @@ function App() {
 				<Route path='/faq' element={<FAQ />}></Route>
 				<Route path='/inventory' element={<CurrentInventory />}></Route>
 				<Route path='/jewelrylibrary' element={<JewelryLibrary />}></Route>
+				<Route path='/addinventory' element={<AddInventory />}></Route>
 			</Routes>
 
 			{/* <MainFooter /> */}

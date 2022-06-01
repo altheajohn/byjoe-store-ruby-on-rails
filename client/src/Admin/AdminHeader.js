@@ -23,9 +23,9 @@ function AdminHeader() {
 						E-mail
 					</Menu.Item>
 
-					<Dropdown item simple text='Shop'>
+					<Dropdown item simple text='Shop Inventory'>
 						<Dropdown.Menu>
-							<Dropdown.Item href='/inventory'>Add Inventory</Dropdown.Item>
+							<Dropdown.Item href='/addinventory'>Add Inventory</Dropdown.Item>
 
 							<Dropdown.Item href='/jewelrylibrary'>
 								Jewelry Library
