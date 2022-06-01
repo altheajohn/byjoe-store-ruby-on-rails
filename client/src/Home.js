@@ -3,11 +3,11 @@ import {
 	Container,
 	Header,
 	Image,
-	Form,
-	Placeholder,
-	Message,
-	Icon,
-	Button,
+	// Form,
+	// Placeholder,
+	// Message,
+	// Icon,
+	// Button,
 } from "semantic-ui-react";
 import ByjoeCreationsLogo from "./images/E.ByjoeLogo2.png";
 import CoralSet from "./images/coralset.jpg";
@@ -17,11 +17,11 @@ import MainHeader from "./Header.js";
 import MainFooter from "./Footer.js";
 
 function Home() {
-	const options = [
-		{ key: "s", text: "Self", value: "self" },
-		{ key: "f", text: "Friend", value: "friend" },
-		{ key: "o", text: "Other", value: "other" },
-	];
+	// const options = [
+	// 	{ key: "s", text: "Self", value: "self" },
+	// 	{ key: "f", text: "Friend", value: "friend" },
+	// 	{ key: "o", text: "Other", value: "other" },
+	// ];
 
 	return (
 		<>

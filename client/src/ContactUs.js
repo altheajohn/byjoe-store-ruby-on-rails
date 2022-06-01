@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	Container,
-	Form,
-	Input,
-	TextArea,
-	Button,
-	Segment,
-} from "semantic-ui-react";
+import { Container, Form, Input, TextArea, Button } from "semantic-ui-react";
 import MainHeader from "./Header.js";
 import MainFooter from "./Footer.js";
 

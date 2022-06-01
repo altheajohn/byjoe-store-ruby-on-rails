@@ -8,8 +8,8 @@ import {
 	Item,
 	Image,
 	Form,
-	Input,
-	TextArea,
+	// Input,
+	// TextArea,
 } from "semantic-ui-react";
 
 import MainHeader from "./Header.js";

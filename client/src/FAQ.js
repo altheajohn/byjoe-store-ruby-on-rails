@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header, Image, Segment, Grid } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
 import MainHeader from "./Header.js";
 import MainFooter from "./Footer.js";
 

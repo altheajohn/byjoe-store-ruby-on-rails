@@ -1,9 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import { useState } from "react";
 import "./index.css";
 import Home from "./Home";
-import MainHeader from "./Header.js";
-import MainFooter from "./Footer.js";
 import AdminLogin from "./Admin/AdminLogIn.js";
 import OrderForm from "./OrderForm.js";
 import Contact from "./ContactUs.js";
@@ -18,14 +16,35 @@ import AddInventory from "./Admin/AddInventory";
 import "semantic-ui-css/semantic.min.css";
 
 function App() {
+	const [user, setUser] = useState(null);
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	return (
 		<>
 			{/* <MainHeader /> */}
 			<Routes>
 				<Route path='/' element={<Home />}></Route>
 				{/* <Route path='*' element={<NoPage />} /> */}
-				<Route path='/Admin' element={<AdminLogin />}></Route>
-				<Route path='/AdminLanding' element={<AdminLanding />}></Route>
+				<Route
+					path='/Admin'
+					element={
+						<AdminLogin
+							setIsAuthenticated={setIsAuthenticated}
+							isAuthenticated={isAuthenticated}
+							setUser={setUser}
+						/>
+					}
+				></Route>
+				<Route
+					path='/AdminLanding'
+					element={
+						<AdminLanding
+							setIsAuthenticated={setIsAuthenticated}
+							isAuthenticated={isAuthenticated}
+							user={user}
+							setUser={setUser}
+						/>
+					}
+				></Route>
 				<Route path='/orderform' element={<OrderForm />}></Route>
 				<Route path='/contact' element={<Contact />}></Route>
 				<Route path='/about' element={<About />}></Route>

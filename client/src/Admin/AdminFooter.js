@@ -1,13 +1,5 @@
 import React from "react";
-import {
-	Segment,
-	Container,
-	Divider,
-	Image,
-	List,
-	Grid,
-	Header,
-} from "semantic-ui-react";
+import { Segment, Container, List } from "semantic-ui-react";
 
 function AdminFooter() {
 	return (
