@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import "./index.css";
+import Home from "./Home";
+import MainHeader from "./Header.js";
+import MainFooter from "./Footer.js";
+import AdminLogin from "./Admin/AdminLogIn.js";
+import OrderForm from "./OrderForm.js";
+import Contact from "./ContactUs.js";
+import About from "./About.js";
+import Reviews from "./Reviews.js";
+import FAQ from "./FAQ.js";
+import JewelryLibrary from "./JewelryLibrary.js";
+import CurrentInventory from "./CurrentInventory";
+import AdminLanding from "./Admin/AdminLandingPage";
+import "semantic-ui-css/semantic.min.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			{/* <MainHeader /> */}
+			<Routes>
+				<Route path='/' element={<Home />}></Route>
+				<Route path='/Admin' element={<AdminLogin />}></Route>
+				<Route path='/AdminLanding' element={<AdminLanding />}></Route>
+				<Route path='/orderform' element={<OrderForm />}></Route>
+				<Route path='/contact' element={<Contact />}></Route>
+				<Route path='/about' element={<About />}></Route>
+				<Route path='/reviews' element={<Reviews />}></Route>
+				<Route path='/faq' element={<FAQ />}></Route>
+				<Route path='/inventory' element={<CurrentInventory />}></Route>
+				<Route path='/jewelrylibrary' element={<JewelryLibrary />}></Route>
+			</Routes>
+
+			{/* <MainFooter /> */}
+		</>
+	);
 }
 
 export default App;
