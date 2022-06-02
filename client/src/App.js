@@ -12,6 +12,7 @@ import JewelryLibrary from "./JewelryLibrary.js";
 import CurrentInventory from "./CurrentInventory";
 import AdminLanding from "./Admin/AdminLandingPage";
 import AddInventory from "./Admin/AddInventory";
+import Logout from "./Admin/Logout.js";
 
 import "semantic-ui-css/semantic.min.css";
 
@@ -34,6 +35,8 @@ function App() {
 						/>
 					}
 				></Route>
+
+				 <Route path='/logout' element={<Logout />}></Route>
 				<Route
 					path='/AdminLanding'
 					element={

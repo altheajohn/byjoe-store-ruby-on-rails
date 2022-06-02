@@ -8,7 +8,7 @@
 
 require "faker"
 
-puts "Creating seeds..."
+puts "Creating seeds..."``
 
 puts "Creating categories..."
 

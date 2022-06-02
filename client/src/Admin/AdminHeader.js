@@ -1,11 +1,24 @@
 import React from "react";
-import { Container, Dropdown, Image, Menu } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
+import { Container, Dropdown, Image, Menu, Button } from "semantic-ui-react";
 import butterfly from "../images/butterfly.png";
 
-function AdminHeader() {
+function AdminHeader({ isAuthenticated, setUser, setIsAuthenticated, user }) {
+	const navigate = useNavigate();
+
+	function logout() {
+		fetch("/logout", {
+			method: "DELETE",
+		}).then(() => {
+			setIsAuthenticated(false);
+			setUser(null);
+			navigate("/");
+		});
+	}
+
 	return (
 		<>
-			<Menu stackable borderless>
+			<Menu stackable borderless inverted>
 				<Container>
 					<Menu.Item header>
 						<Image
@@ -37,9 +50,23 @@ function AdminHeader() {
 							<Dropdown.Item href='/reviews'>Reviews</Dropdown.Item>
 							<Dropdown.Item href='/contact'>Contact Us</Dropdown.Item>
 							<Dropdown.Item href='/about'>About Us</Dropdown.Item>
-							<Dropdown.Item href='/faq'>LogOut</Dropdown.Item>
+							<Dropdown.Item>
+								<Button style={{ margin: ".25em" }} size='small'>
+									Log Out
+								</Button>
+							</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
+					<Menu.Item position='right' as='a' href='/logout'>
+						<Button
+							floated='right'
+							id='logOutButton'
+							className='button is-warning'
+							onClick={logout}
+						>
+							Logout
+						</Button>
+					</Menu.Item>
 				</Container>
 			</Menu>
 		</>
