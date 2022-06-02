@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainHeader from "./Header.js";
 import MainFooter from "./Footer.js";
 import JewelryCard from "./Admin/JewelryCard";
 import { Container, Grid, Button } from "semantic-ui-react";
 
 function CurrentInventory() {
+	const [product, setProduct] = useState([]);
+	const [errors, setErrors] = useState("");
+
+	useEffect(() => {
+		fetch(`/products`).then((res) => {
+			if (res.ok) {
+				res.json().then((product) => {
+					setProduct(product);
+				});
+			} else {
+				res.json().then((json) => setErrors(json.error));
+			}
+		});
+	}, []);
+
 	return (
 		<div>
 			<MainHeader />
@@ -21,11 +36,23 @@ function CurrentInventory() {
 				</p>
 
 				<Grid stackable columns={3} style={{ margin: "1em" }}>
-					<Grid.Row>
+					<Grid.Row >
 						<Grid.Column>
-							<JewelryCard />? <Button> Purchase/Sold/Idk</Button>
+							
+							{product?.map((item) => (
+								<JewelryCard 
+									name={item.name}
+									description={item.description}
+									image={item.image}
+									size={item.size}
+									category_id={item.category__id}
+								/>
+							))}
+							{/* ? <Button> Purchase/Sold/Idk</Button> */}
 						</Grid.Column>
-						<Grid.Column>
+
+
+						{/* <Grid.Column>
 							<JewelryCard />
 						</Grid.Column>
 						<Grid.Column>
@@ -39,7 +66,7 @@ function CurrentInventory() {
 						</Grid.Column>
 						<Grid.Column>
 							<JewelryCard />
-						</Grid.Column>
+						</Grid.Column> */}
 					</Grid.Row>
 				</Grid>
 			</Container>

@@ -1,25 +1,20 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
-function jewelrycard() {
+function jewelrycard({ name, description, image, size, catagory_id }) {
 	return (
 		<Card style={{ margin: "1em" }}>
-			<Image
-				src='https://react.semantic-ui.com/images/wireframe/image.png'
-				wrapped
-				ui={false}
-			/>
+			<Image src={image} wrapped ui={false} />
 			<Card.Content>
-				<Card.Header>Jewelry Name</Card.Header>
+				<Card.Header>{name}</Card.Header>
 				<Card.Description>
 					<ul>
-						<li>Jewelry Catagory </li>
-						<li> Jewelry Color </li>
-						<li> Jewelry Size</li>
+						<li>Jewelry Catagory: {catagory_id}</li>
+						<li> Jewelry Size : {size}</li>
 					</ul>
 				</Card.Description>
 
-				<p>Jewelry Description</p>
+				<p>{description}</p>
 			</Card.Content>
 		</Card>
 	);

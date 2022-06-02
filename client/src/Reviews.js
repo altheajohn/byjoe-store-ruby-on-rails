@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Container,
 	Button,
 	Header,
 	Icon,
 	Segment,
-	Item,
 	Image,
 	Form,
 	// Input,
@@ -14,11 +13,25 @@ import {
 
 import MainHeader from "./Header.js";
 import MainFooter from "./Footer.js";
+import ReviewCard from "./ReviewCard.js";
 
 function Reviews() {
-	const paragraph = (
-		<Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-	);
+
+	const [review, setReview] = useState([]);
+	const [errors, setErrors] = useState("");
+
+	useEffect(() => {
+		fetch(`/reviews`).then((res) => {
+			if (res.ok) {
+				res.json().then((review) => {
+					setReview(review);
+				});
+			} else {
+				res.json().then((json) => setErrors(json.error));
+			}
+		});
+	}, []);
+
 	return (
 		<>
 			<MainHeader />
@@ -29,79 +42,16 @@ function Reviews() {
 			<Container>
 				<Segment style={{ marginTop: "2em" }}>
 					{/* ------------------------- Reviews --------------------*/}
-					<Item.Group>
-						<Item>
-							<Item.Image
-								size='small'
-								src='https://react.semantic-ui.com/images/wireframe/image.png'
-							/>
 
-							<Item.Content>
-								<Item.Header as='a'>ITEM</Item.Header>
-								<Item.Description>{paragraph}</Item.Description>
-								<Item.Extra>
-									Posted By: User's Name Here
-									<Button.Group floated='right' size='mini' compact>
-										<Button basic color='purple'>
-											Edit
-										</Button>
-										<Button.Or />
-										<Button basic color='red'>
-											Delete
-										</Button>
-									</Button.Group>
-								</Item.Extra>
-							</Item.Content>
-						</Item>
-
-						<Item>
-							<Item.Image
-								size='small'
-								src='https://react.semantic-ui.com/images/wireframe/image.png'
-							/>
-
-							<Item.Content>
-								<Item.Header as='a'>ITEM</Item.Header>
-								<Item.Description>{paragraph}</Item.Description>
-								<Item.Extra>
-									Posted By: User's Name Here
-									<Button.Group floated='right' size='mini' compact>
-										<Button basic color='purple'>
-											Edit
-										</Button>
-										<Button.Or />
-										<Button basic color='red'>
-											Delete
-										</Button>
-									</Button.Group>
-								</Item.Extra>
-							</Item.Content>
-						</Item>
-
-						<Item>
-							<Item.Image
-								size='small'
-								src='https://react.semantic-ui.com/images/wireframe/image.png'
-							/>
-
-							<Item.Content>
-								<Item.Header as='a'>ITEM</Item.Header>
-								<Item.Description>{paragraph}</Item.Description>
-								<Item.Extra>
-									Posted By: User's Name Here
-									<Button.Group floated='right' size='mini' compact>
-										<Button basic color='purple'>
-											Edit
-										</Button>
-										<Button.Or />
-										<Button basic color='red'>
-											Delete
-										</Button>
-									</Button.Group>
-								</Item.Extra>
-							</Item.Content>
-						</Item>
-					</Item.Group>
+					{review?.map((item) => (
+						<ReviewCard
+							content={item.content}
+							full_name={item.full_name}
+							// email={item.email}
+							// rating={item.rating}
+							image={item.image}
+						/>
+					))}
 
 					{/* ------------------------- Review Form -------------------- */}
 				</Segment>
