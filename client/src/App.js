@@ -6,6 +6,7 @@ import AdminLogin from "./Admin/AdminLogIn.js";
 import OrderForm from "./OrderForm.js";
 import Contact from "./ContactUs.js";
 import About from "./About.js";
+import AdminReviews from "./Admin/AdminReviews";
 import Reviews from "./Reviews.js";
 import FAQ from "./FAQ.js";
 import JewelryLibrary from "./JewelryLibrary.js";
@@ -36,11 +37,22 @@ function App() {
 					}
 				></Route>
 
-				 <Route path='/logout' element={<Logout />}></Route>
+				<Route path='/logout' element={<Logout />}></Route>
 				<Route
 					path='/AdminLanding'
 					element={
 						<AdminLanding
+							setIsAuthenticated={setIsAuthenticated}
+							isAuthenticated={isAuthenticated}
+							user={user}
+							setUser={setUser}
+						/>
+					}
+				></Route>
+				<Route
+					path='/AdminReviews'
+					element={
+						<AdminReviews
 							setIsAuthenticated={setIsAuthenticated}
 							isAuthenticated={isAuthenticated}
 							user={user}

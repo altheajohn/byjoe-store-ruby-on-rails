@@ -36,6 +36,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
+  # adde in this line from tutorial video on 6/2
+    respond_to do |format|
+    format.html {redirect_to post_url, notice: 'Post was successfully deleted'}
+    format.json {render json: Post.all, status: :ok }
+    end
   end
 
   # def latest
@@ -52,6 +57,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title)
+      params.require(:post).permit(:title, :content)
     end
 end

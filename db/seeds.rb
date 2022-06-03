@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: Star Wars }, { name: Lord of the Rings }])
 #   Character.create(name: Luke, movie: movies.first)
 
+
+
 require "faker"
 
 puts "Creating seeds..."
@@ -20,17 +22,17 @@ cat5 = Category.create(name: "Full Sets", description: "Includes a necklace, a p
 # cat6 = Category.create(name: Bolo Tie, description: A classic texas style tie necklace)
 
 puts "Creating reviews..."
-Review1 = Review.create(content: "Testing Reviews ", full_name: "Thea", email: "email@email.com", rating: 5, image: Faker::Placeholdit.image(size: '50x50'))
-Review2 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review3 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Revie4 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Revie5 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review6 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review7 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review8 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review9 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review10 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
-Review11 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'))
+Review1 = Review.create(content: "Testing Reviews ", full_name: "Thea", email: "email@email.com", rating: 5, image: Faker::Placeholdit.image(size: '50x50'), user_id:1)
+Review2 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:2)
+Review3 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:3)
+Revie4 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:4)
+Revie5 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:5)
+Review6 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:6)
+Review7 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:7)
+Review8 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'),user_id:8)
+Review9 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'),user_id:9)
+Review10 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:10)
+Review11 = Review.create(content: Faker::Coffee.notes, full_name: Faker::Name.name, email: Faker::Internet.email, rating: Faker::Number.within(range: 1..5), image: Faker::Placeholdit.image(size: '200x200'), user_id:11)
 
 puts 'creating users'
 

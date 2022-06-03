@@ -51,7 +51,7 @@ function OrderForm() {
 		<>
 			<MainHeader />
 			<Container>
-				<Message
+				{/* <Message
 					attached
 					header='Custom Order Form '
 					content='Fill out the form below to for a custom order qoute.'
@@ -86,7 +86,7 @@ function OrderForm() {
 						label='Phone Number'
 						type='phone number'
 						placeholder='000-000-0000'
-						autoComplete='email'
+						autoComplete='phone'
 						required
 						onChange={(event) => setPhone(event.target.value)}
 					/>
@@ -120,7 +120,18 @@ Example: Hello! I am intresed in the Coral Set, large. My ring size is 7.5 and n
 				<Message attached='bottom' warning>
 					<Icon name='warning' />
 					Reminder: All Custom Orders ONCE STARTED are NON REFUNDABLE.
-				</Message>
+				</Message> */}
+
+				<iframe
+					src='https://docs.google.com/forms/d/e/1FAIpQLSeqvZaGlMnZCpwkQlTEGjSABnuqh1Yfnptji5aO8rjav8tFaQ/viewform?embedded=true'
+					width='1000'
+					height='1387'
+					frameborder='0'
+					marginheight='0'
+					marginwidth='0'
+				>
+					Loading…
+				</iframe>
 			</Container>
 
 			<MainFooter />

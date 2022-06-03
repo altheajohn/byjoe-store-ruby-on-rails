@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :reviews
+  # , only: [:index, :create, :destroy, :update]
   resources :inventories
   resources :categories
   # Routing logic: fallback requests for React Router.

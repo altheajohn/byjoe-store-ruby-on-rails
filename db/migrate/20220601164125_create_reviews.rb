@@ -6,6 +6,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.string :email
       t.integer :rating
       t.string :image
+      t.integer :user_id
       t.timestamps
     end
   end

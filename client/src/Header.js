@@ -28,7 +28,9 @@ function MainHeader() {
 						<Dropdown.Menu>
 							<Dropdown.Item href='/inventory'>Current Inventory</Dropdown.Item>
 
-							<Dropdown.Item href='/jewelrylibrary'>
+							<Dropdown.Item
+							// href='/jewelrylibrary'
+							>
 								Jewelry Library
 							</Dropdown.Item>
 						</Dropdown.Menu>
