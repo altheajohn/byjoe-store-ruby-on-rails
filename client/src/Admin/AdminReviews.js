@@ -69,8 +69,6 @@ function Reviews() {
 			.then((data) => setShow(() => data));
 	}, []);
 
-	console.log(show);
-
 	function handleDelete(review) {
 		const id = review.id;
 		let newShow = show.filter((obj) => obj.id != review.id);
@@ -97,16 +95,8 @@ function Reviews() {
 			content: updatedContent,
 		};
 
-		const id = review.id;
-		let newUpdate = show.map((obj) => {
-			if (obj.id === id) {
-				obj.full_name = updatedFullName;
-				obj.content = updatedContent;
-				return obj;
-			} else {
-				return obj;
-			}
-		});
+		const id = updatedId;
+
 		fetch(`/reviews/${id}`, {
 			method: "PATCH",
 			headers: { "Content-Type": "application/json" },
@@ -116,7 +106,14 @@ function Reviews() {
 			.then((data) => {
 				setUpdatedFullName("");
 				setUpdatedContent("");
-				setShow(newUpdate);
+				const result = show.map((review) => {
+					if (review.id === data.id) {
+						return data;
+					} else {
+						return review;
+					}
+				});
+				setShow(result);
 			});
 	}
 

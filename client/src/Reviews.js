@@ -68,7 +68,7 @@ function Reviews() {
 			.then((data) => setShow(() => data));
 	}, []);
 
-	console.log(show);
+	
 
 	function handleDelete(review) {
 		const id = review.id;

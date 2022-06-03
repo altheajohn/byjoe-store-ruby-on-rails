@@ -20,7 +20,6 @@ function Login({ setUser, setIsAuthenticated }) {
 	const [error, setError] = useState([]);
 
 	function onSubmit(e) {
-		console.log("testing");
 		e.preventDefault();
 		const user = {
 			username: username,
